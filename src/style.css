@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@layer components {
   .link-item {
-    @apply text-white text-base font-normal leading-5;
+    @apply text-white text-base font-normal font-lexend leading-5;
+  }
+
+  .btn-link,
+  ._active {
+    @apply flex p-[14px] gap-2 border-2 rounded-3xl;
+  }
+
+  .btn-link {
+    @apply border-additional-purple;
+  }
+
+  ._active{
+    @apply bg-main-blue border-none;
   }
 }
