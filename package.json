@@ -1,6 +1,9 @@
 {
   "name": "poker",
   "version": "0.0.1",
+  "scripts": {
+    "style": "npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch"
+  },
   "dependencies": {
     "prettier": "^3.0.3",
     "tailwindcss": "^3.3.3"

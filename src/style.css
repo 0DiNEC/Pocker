@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .link-item {
+    @apply text-white text-base font-normal leading-5;
+  }
+}
