@@ -4,19 +4,54 @@
 
 @layer components {
   .link-item {
-    @apply text-white text-base font-normal font-lexend leading-5;
+    @apply text-base font-normal leading-5;
   }
 
   .btn-link,
-  ._active {
-    @apply flex p-[14px] gap-2 border-2 rounded-3xl;
+  .btn-link._active {
+    @apply flex p-[14px] gap-2 rounded-3xl;
   }
 
   .btn-link {
-    @apply border-additional-purple;
+    @apply border-2 border-additional-purple;
   }
 
-  ._active{
+  .blog__area {
+    @apply relative overflow-y-scroll py-6 pl-6 pr-10 border-[3px] border-additional-purple rounded-[100px] max-w-[530px]  max-h-[595px] w-full h-full;
+  }
+
+  .area__content {
+    @apply flex flex-col overflow-hidden gap-4 w-full h-full;
+  }
+
+  .article {
+    @apply flex bg-main-deep-blue flex-col py-4 px-16 rounded-[196px] items-start self-stretch;
+  }
+
+  .article__info {
+    @apply text-2xl font-normal leading-7;
+  }
+
+  .article__date {
+    @apply text-transparent-white-60 text-sm font-[450] leading-4 mt-[14px];
+  }
+
+  .scrollbar {
+    @apply absolute top-[15%] right-4 h-[70%] w-2 bg-transparent-white-12 rounded-[10px];
+  }
+
+  .scrollbar-thumb {
+    @apply relative w-full h-[104px] bg-main-blue cursor-pointer rounded-[10px];
+  }
+}
+
+@layer utilities {
+  ._active {
     @apply bg-main-blue border-none;
   }
+}
+
+.blog__area::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
 }

@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="../dist/output.css" />
     <title>Poker</title>
   </head>
-  <body class="bg-main-navy-blue pt-4">
-    <header class="flex justify-between py-[1.1rem] px-11 mx-[140px] bg-main-navy-blue border-4 border-main-blue rounded-[64px]">
+  <body class="pt-4 bg-main-navy-blue text-white font-lexend">
+    <header
+      class="flex justify-between py-[1.1rem] px-11 mx-[140px] bg-main-navy-blue border-4 border-main-blue rounded-[64px]"
+    >
       <div class="logo flex flex-grow"></div>
       <nav class="menu mx-auto py-2 flex-grow-[1.3]">
         <ul class="menu__links flex justify-center gap-[2.05rem] p-2">
@@ -23,12 +25,60 @@
         </ul>
       </nav>
       <div class="btn-links flex items-center gap-[12px]">
-        <button class="link-item btn-link"><img src="svg/planet.svg" alt="" />EN</button>
-        <button class="link-item btn-link">LOG IN</button>
-        <button class="link-item btn-link _active">SIGN UP</button>
+        <button type="submit" class="link-item btn-link"><img src="svg/planet.svg" alt="" />EN</button>
+        <button type="submit" class="link-item btn-link">LOG IN</button>
+        <button type="submit" class="link-item btn-link _active">SIGN UP</button>
       </div>
     </header>
-
-    
+    <main>
+      <div class="title-info">
+        <div class="title font-medium">
+          <h1 class="heading-h1 flex flex-col text-8xl leading-[96px]">
+            HOUSE OF
+            <span class="text-main-blue"> GAMBLING </span>
+          </h1>
+          <h4 class="description mt-6 text-[32px] leading-8 text-transparent-white-60">
+            Raise your ROI with direct advertiser
+          </h4>
+        </div>
+        <button type="submit" class="_active px-[72px] py-5 mt-12 rounded-[32px]">
+          <span class="text-2xl font-semibold leading-8 uppercase">Become a Partner</span>
+        </button>
+      </div>
+      <div class="banner"></div>
+      <div class="blog">
+        <div class="title">
+          <h2 class="heading-h2 text-[40px] leading-10 font-semibold">BLOG</h2>
+        </div>
+        <div class="blog__area">
+          <div class="area__content">
+            <div class="article _active">
+              <div class="article__info">Payment methods: Skrill, Neteller, webmoney, Bank transfer</div>
+              <div class="article__date">10.02.2023</div>
+            </div>
+            <div class="article">
+              <div class="article__info">Payment methods: Skrill, Neteller, webmoney, Bank transfer</div>
+              <div class="article__date">10.02.2023</div>
+            </div>
+            <div class="article">
+              <div class="article__info">Payment methods: Skrill, Neteller, webmoney, Bank transfer</div>
+              <div class="article__date">10.02.2023</div>
+            </div>
+            <div class="article">
+              <div class="article__info">Payment methods: Skrill, Neteller, webmoney, Bank transfer</div>
+              <div class="article__date">10.02.2023</div>
+            </div>
+            <div class="article">
+              <div class="article__info">Payment methods: Skrill, Neteller, webmoney, Bank transfer</div>
+              <div class="article__date">10.02.2023</div>
+            </div>
+          </div>
+          <div class="scrollbar">
+            <div class="scrollbar-thumb"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="scripts/scroll.js"></script>
   </body>
 </html>
