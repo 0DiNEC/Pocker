@@ -12,7 +12,7 @@ module.exports = {
         main: {
           'navy-blue': '#110A1D',
           blue: '#478BF9',
-          'deep-blue' : '#1E1231',
+          'deep-blue': '#1E1231',
         },
         transparent: {
           'white-60': 'rgba(255, 255, 255, 0.60)',
@@ -21,6 +21,11 @@ module.exports = {
         additional: {
           purple: '#9DADF2',
         },
+      },
+      animation: {
+        'move-normal': 'move 10s linear infinite',
+        'move-slow': 'move 15s linear infinite',
+        'move-normal-reverse': 'moveReverse 10s linear infinite',
       },
     },
   },
