@@ -785,12 +785,12 @@ header .link-item {
   margin-right: auto;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
-.mb-\[14px\] {
-  margin-bottom: 14px;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mt-12 {
@@ -803,10 +803,6 @@ header .link-item {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .flex {
@@ -989,26 +985,6 @@ header .link-item {
 ._active-link {
   --tw-text-opacity: 1;
   color: rgb(71 139 249 / var(--tw-text-opacity));
-}
-
-@keyframes move {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(110%);
-  }
-}
-
-@keyframes moveReverse {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-30%);
-  }
 }
 
 /* header */

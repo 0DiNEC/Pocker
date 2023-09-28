@@ -21,34 +21,21 @@ const runSvgAnimate = () => {
   verticalLines.forEach((verticalLine, index) => {
     const images = verticalLine.querySelectorAll('.svg-img');
     const verticalLineHeight = verticalLine.clientHeight;
-    const direction = index === 1 ? -1 : 1;
     images.forEach((img, i) => {
       let progress = img.getBoundingClientRect().top;
-      const speed = index + 2;
+      const speed = index === 1 ? 2 : 4;
 
       const animateImage = () => {
         const imgRect = img.getBoundingClientRect();
         const lineRect = verticalLine.getBoundingClientRect();
 
-        if (direction === 1) {
-          const distance = imgRect.top - lineRect.top;
-
-          if (distance < -maxDistance) {
-            progress = verticalLineHeight - maxDistance;
-            img.style.top = `${progress}px`;
-          } else {
-            progress -= speed;
-            img.style.top = `${progress}px`;
-          }
-        } else if (direction === -1) {
-          const distance = imgRect.top - lineRect.bottom;
-          if (distance >= maxDistance / 2) {
-            progress = -maxDistance;
-            img.style.top = `${progress}px`;
-          } else {
-            progress += speed;
-            img.style.top = `${progress}px`;
-          }
+        const distance = imgRect.top - lineRect.top;
+        if (distance < -maxDistance) {
+          progress = verticalLineHeight - maxDistance;
+          img.style.top = `${progress}px`;
+        } else {
+          progress -= speed;
+          img.style.top = `${progress}px`;
         }
         requestAnimationFrame(animateImage);
       };

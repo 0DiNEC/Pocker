@@ -114,23 +114,6 @@
     background-clip: content-box;
     background-position: center;
   }
-
-  @keyframes move {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(110%);
-    }
-  }
-  @keyframes moveReverse {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-30%);
-    }
-  }
 }
 
 .blog__area::-webkit-scrollbar {
