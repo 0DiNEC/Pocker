@@ -4,7 +4,7 @@
 
 /* header */
 @layer components {
-  .link-item {
+  header .link-item {
     @apply text-base font-normal leading-5;
   }
 
@@ -63,9 +63,56 @@
   }
 }
 
+
+@layer components {
+  .footer {
+    @apply flex mt-16 justify-between items-end gap-8 px-[140px] pt-[2.1rem] pb-6 border-t-4 border-l-4 border-r-4 border-main-blue rounded-t-rounded-3xl;
+  }
+
+  .pages {
+    @apply flex justify-between;
+  }
+
+  .pages__links {
+    @apply flex justify-center items-center gap-10;
+  }
+
+  .pages__links .link__item {
+    @apply font-lexend text-base font-normal leading-5 text-center hover:text-main-blue transition-colors;
+  }
+
+  .btns-social {
+    @apply flex gap-2;
+  }
+
+  .btn-social__link {
+    @apply bg-vector w-8 h-8 hover:invert transition-all duration-300;
+  }
+
+  .link__img {
+    @apply flex items-center justify-center h-full w-full;
+  }
+
+  .link__img img {
+    @apply w-4 h-4;
+  }
+
+}
+
 @layer utilities {
   ._active {
     @apply bg-main-blue border-none;
+  }
+
+  ._active-link {
+    @apply text-main-blue;
+  }
+
+  .bg-vector {
+    background-image:url('../src/svg/BG.svg');
+    background-repeat:no-repeat;
+    background-clip: content-box;
+    background-position: center;
   }
 
   @keyframes move {
