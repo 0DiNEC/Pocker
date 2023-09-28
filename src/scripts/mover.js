@@ -1,5 +1,7 @@
+const main = document.querySelector('main');
 const verticalLines = document.querySelectorAll('.vertical-line');
 const marginY = 24;
+const maxDistance = 200;
 
 window.addEventListener('load', () => {
   verticalLines.forEach((verticalLine) => {
@@ -16,24 +18,37 @@ window.addEventListener('load', () => {
 });
 
 const runSvgAnimate = () => {
-  verticalLines.forEach((verticalLine) => {
+  verticalLines.forEach((verticalLine, index) => {
     const images = verticalLine.querySelectorAll('.svg-img');
     const verticalLineHeight = verticalLine.clientHeight;
-    images.forEach((img) => {
+    const direction = index === 1 ? -1 : 1;
+    images.forEach((img, i) => {
       let progress = img.getBoundingClientRect().top;
-      
-
-      const speed = 10;
+      const speed = index + 2;
 
       const animateImage = () => {
-        const distance = img.getBoundingClientRect().top - verticalLine.getBoundingClientRect().top;
+        const imgRect = img.getBoundingClientRect();
+        const lineRect = verticalLine.getBoundingClientRect();
 
-        if (distance < 0) {
-          progress = verticalLineHeight;
-          img.style.top = `${progress}px`;
-        } else {
-          progress -= speed;
-          img.style.top = `${progress}px`;
+        if (direction === 1) {
+          const distance = imgRect.top - lineRect.top;
+
+          if (distance < -maxDistance) {
+            progress = verticalLineHeight - maxDistance;
+            img.style.top = `${progress}px`;
+          } else {
+            progress -= speed;
+            img.style.top = `${progress}px`;
+          }
+        } else if (direction === -1) {
+          const distance = imgRect.top - lineRect.bottom;
+          if (distance >= maxDistance / 2) {
+            progress = -maxDistance;
+            img.style.top = `${progress}px`;
+          } else {
+            progress += speed;
+            img.style.top = `${progress}px`;
+          }
         }
         requestAnimationFrame(animateImage);
       };
