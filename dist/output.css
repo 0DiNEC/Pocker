@@ -562,9 +562,9 @@ video {
   }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1840px) {
   .container {
-    max-width: 1920px;
+    max-width: 1840px;
   }
 }
 
@@ -588,11 +588,31 @@ header .link-item {
   border-color: rgb(157 173 242 / var(--tw-border-opacity));
 }
 
+.main {
+  margin-left: 140px;
+  margin-right: 140px;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1840px) {
+  .main {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1840px) {
+  .main {
+    max-height: 960px;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 /* Banner */
 
 .banner {
-  position: relative;
-  left: 2rem;
   z-index: -5;
   margin-bottom: auto;
   display: grid;
@@ -605,10 +625,16 @@ header .link-item {
 
 @media (max-width: 1840px) {
   .banner {
-    height: 90vh;
     position: absolute;
-    top: 350px;
-    left: 40%;
+    right: 12rem;
+    max-height: 1000px;
+  }
+}
+
+@media (min-width: 1840px) {
+  .banner {
+    position: relative;
+    left: 2rem;
   }
 }
 
@@ -635,9 +661,7 @@ header .link-item {
 .blog__area {
   position: relative;
   height: 100%;
-  max-height: 595px;
   width: 100%;
-  max-width: 530px;
   overflow-y: scroll;
   border-radius: 100px;
   border-width: 3px;
@@ -647,6 +671,20 @@ header .link-item {
   padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 2.5rem;
+}
+
+@media (max-width: 1840px) {
+  .blog__area {
+    max-height: 500px;
+    max-width: 490px;
+  }
+}
+
+@media (min-width: 1840px) {
+  .blog__area {
+    max-height: 595px;
+    max-width: 530px;
+  }
 }
 
 .area__content {
@@ -673,9 +711,21 @@ header .link-item {
 }
 
 .article__info {
-  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.75rem;
+}
+
+@media (max-width: 1840px) {
+  .article__info {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1840px) {
+  .article__info {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 .article__date {
@@ -707,6 +757,8 @@ header .link-item {
 }
 
 .footer {
+  position: relative;
+  z-index: 10;
   margin-top: 4rem;
   display: flex;
   align-items: flex-end;
@@ -764,8 +816,8 @@ header .link-item {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-  background-image:url('../src/svg/BG.svg');
-  background-repeat:no-repeat;
+  background-image: url('../src/svg/BG.svg');
+  background-repeat: no-repeat;
   background-clip: content-box;
   background-position: center;
 }
@@ -806,12 +858,12 @@ header .link-item {
   margin-bottom: 1.5rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.mt-12 {
+  margin-top: 3rem;
 }
 
 .mt-6 {
@@ -822,8 +874,9 @@ header .link-item {
   display: flex;
 }
 
-.h-full {
-  height: 100%;
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .flex-grow {
@@ -864,10 +917,6 @@ header .link-item {
 
 .gap-\[2\.05rem\] {
   gap: 2.05rem;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .rounded-\[32px\] {
@@ -925,10 +974,6 @@ header .link-item {
   padding-top: 1rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-right {
   text-align: right;
 }
@@ -940,19 +985,6 @@ header .link-item {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
-}
-
-.text-\[32px\] {
-  font-size: 32px;
-}
-
-.text-\[40px\] {
-  font-size: 40px;
 }
 
 .font-medium {
@@ -1008,23 +1040,51 @@ header .link-item {
 
 /* main */
 
+/* footer */
+
 .blog__area::-webkit-scrollbar {
   width: 0;
   background-color: transparent;
 }
 
 @media (max-width: 1840px) {
-  .\32xl\:mb-\[440px\] {
-    margin-bottom: 440px;
+  .\32xl\:mt-10 {
+    margin-top: 2.5rem;
   }
 
-  .\32xl\:flex-col {
-    flex-direction: column;
+  .\32xl\:basis-\[51\%\] {
+    flex-basis: 51%;
+  }
+
+  .\32xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .\32xl\:text-\[24px\] {
+    font-size: 24px;
+  }
+
+  .\32xl\:text-\[32px\] {
+    font-size: 32px;
   }
 }
 
-@media (min-width: 1920px) {
-  .full-hd\:max-h-\[960px\] {
-    max-height: 960px;
+@media (min-width: 1840px) {
+  .\33xl\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .\33xl\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .\33xl\:text-\[32px\] {
+    font-size: 32px;
+  }
+
+  .\33xl\:text-\[40px\] {
+    font-size: 40px;
   }
 }

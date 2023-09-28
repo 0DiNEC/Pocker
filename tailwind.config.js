@@ -25,7 +25,7 @@ module.exports = {
       screens: {
         xl: { min: '1088px' },
         '2xl': { max: '1840px' },
-        'full-hd': { min: '1920px' },
+        '3xl': { min: '1840px' },
       },
       animation: {
         'move-normal': 'move 10s linear infinite',

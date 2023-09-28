@@ -2,6 +2,7 @@ const banner = document.querySelector('.banner');
 const verticalLines = document.querySelectorAll('.vertical-line');
 const marginY = 24;
 const maxDistance = 350;
+const horizontalMode = 720;
 
 const initVerticalLine = () => {
   verticalLines.forEach((verticalLine) => {
@@ -45,10 +46,10 @@ const reInitMovementAnimation = () => {
 
 window.addEventListener('load', () => {
   reInitMovementAnimation();
-  if (window.innerWidth <= 1840) banner.style.setProperty('transform', 'rotateZ(90deg)');
+  if (window.innerWidth <= horizontalMode) banner.style.setProperty('transform', 'rotateZ(90deg)');
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth <= 1840) banner.style.setProperty('transform', 'rotateZ(90deg)');
+  if (window.innerWidth <= horizontalMode) banner.style.setProperty('transform', 'rotateZ(90deg)');
   else banner.style.setProperty('transform', 'rotateZ(0)');
 });
