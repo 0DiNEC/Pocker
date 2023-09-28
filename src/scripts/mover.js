@@ -1,9 +1,9 @@
-const main = document.querySelector('main');
+const banner = document.querySelector('.banner');
 const verticalLines = document.querySelectorAll('.vertical-line');
 const marginY = 24;
-const maxDistance = 200;
+const maxDistance = 350;
 
-window.addEventListener('load', () => {
+const initVerticalLine = () => {
   verticalLines.forEach((verticalLine) => {
     const images = verticalLine.querySelectorAll('.svg-img');
     let offsetTop = 0;
@@ -14,8 +14,7 @@ window.addEventListener('load', () => {
     });
     verticalLine.style.height = `${offsetTop}px`;
   });
-  runSvgAnimate();
-});
+};
 
 const runSvgAnimate = () => {
   verticalLines.forEach((verticalLine, index) => {
@@ -24,13 +23,8 @@ const runSvgAnimate = () => {
     images.forEach((img, i) => {
       let progress = img.getBoundingClientRect().top;
       const speed = index === 1 ? 2 : 4;
-
       const animateImage = () => {
-        const imgRect = img.getBoundingClientRect();
-        const lineRect = verticalLine.getBoundingClientRect();
-
-        const distance = imgRect.top - lineRect.top;
-        if (distance < -maxDistance) {
+        if (progress < -maxDistance) {
           progress = verticalLineHeight - maxDistance;
           img.style.top = `${progress}px`;
         } else {
@@ -43,3 +37,18 @@ const runSvgAnimate = () => {
     });
   });
 };
+
+const reInitMovementAnimation = () => {
+  initVerticalLine();
+  runSvgAnimate();
+};
+
+window.addEventListener('load', () => {
+  reInitMovementAnimation();
+  if (window.innerWidth <= 1840) banner.style.setProperty('transform', 'rotateZ(90deg)');
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 1840) banner.style.setProperty('transform', 'rotateZ(90deg)');
+  else banner.style.setProperty('transform', 'rotateZ(0)');
+});

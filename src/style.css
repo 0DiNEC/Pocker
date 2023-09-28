@@ -22,11 +22,11 @@
 @layer components {
   /* Banner */
   .banner {
-    @apply relative grid grid-cols-3 gap-4 left-8 mb-auto max-w-[333px] w-full;
+    @apply relative 2xl:absolute-banner grid grid-cols-3 gap-4 left-8 mb-auto max-w-[333px] w-full overflow-hidden  2xl:h-[90vh] z-[-5];
   }
 
   .vertical-line {
-    @apply relative flex flex-col-reverse max-w-[101px] min-w-[64px] w-full h-full;
+    @apply relative flex flex-col-reverse max-w-[101px] min-w-[64px] w-full h-full translate-y-36;
   }
 
   .vertical-line .svg-img {
@@ -106,6 +106,10 @@
 
   ._active-link {
     @apply text-main-blue;
+  }
+
+  .absolute-banner {
+    @apply absolute top-[350px] left-[40%];
   }
 
   .bg-vector {

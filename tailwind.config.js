@@ -22,6 +22,11 @@ module.exports = {
           purple: '#9DADF2',
         },
       },
+      screens: {
+        xl: { min: '1088px' },
+        '2xl': { max: '1840px' },
+        'full-hd': { min: '1920px' },
+      },
       animation: {
         'move-normal': 'move 10s linear infinite',
         'move-slow': 'move 15s linear infinite',
