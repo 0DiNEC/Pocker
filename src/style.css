@@ -22,15 +22,15 @@
 @layer components {
   /* Banner */
   .banner {
-    @apply relative grid grid-cols-3 gap-4 left-8;
+    @apply relative grid grid-cols-3 gap-4 left-8 mb-auto max-w-[333px] w-full;
   }
 
   .vertical-line {
-    @apply relative flex flex-col-reverse gap-6 transition-transform;
+    @apply relative flex flex-col-reverse max-w-[101px] min-w-[64px] w-full h-full;
   }
 
   .vertical-line .svg-img {
-    @apply relative;
+    @apply absolute left-0 w-full;
   }
 
   /* blog */

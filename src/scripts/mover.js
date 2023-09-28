@@ -1,36 +1,43 @@
-const verticalLine = document.querySelector('.vertical-line');
-const images = verticalLine.querySelectorAll('.svg-img');
+const verticalLines = document.querySelectorAll('.vertical-line');
+const marginY = 24;
 
-console.log(verticalLine.clientHeight);
-images.forEach((img, index) => {
-  const distance = img.getBoundingClientRect().bottom - verticalLine.getBoundingClientRect().top;
-  console.log(`index :${index} distance:${distance}`);
-})
+window.addEventListener('load', () => {
+  verticalLines.forEach((verticalLine) => {
+    const images = verticalLine.querySelectorAll('.svg-img');
+    let offsetTop = 0;
+    images.forEach((img) => {
+      const imgHeight = img.clientHeight;
+      img.style.top = `${offsetTop}px`;
+      offsetTop += imgHeight + marginY;
+    });
+    verticalLine.style.height = `${offsetTop}px`;
+  });
+  runSvgAnimate();
+});
 
 const runSvgAnimate = () => {
-  const translateHeight = verticalLine.clientHeight;
-  images.forEach((img) => {
-    let progress = 0;
-    const speed = 10;
-    const startDistance = img.getBoundingClientRect().bottom - verticalLine.getBoundingClientRect().top;
-    
-    const animateImage = () => {
-      const distance = img.getBoundingClientRect().bottom - verticalLine.getBoundingClientRect().top;
-      const imgHeight = img.clientHeight;
+  verticalLines.forEach((verticalLine) => {
+    const images = verticalLine.querySelectorAll('.svg-img');
+    const verticalLineHeight = verticalLine.clientHeight;
+    images.forEach((img) => {
+      let progress = img.getBoundingClientRect().top;
       
-      if (distance < 0 - imgHeight) {
-        progress = translateHeight;
-        img.style.transform = `translateY(${startDistance + translateHeight - imgHeight}px)`;                        
-      } else {
-        progress -= speed;
-        img.style.transform = `translateY(${progress}px)`;
-      }
-      
-      requestAnimationFrame(animateImage);
-    };
 
-    animateImage();
+      const speed = 10;
+
+      const animateImage = () => {
+        const distance = img.getBoundingClientRect().top - verticalLine.getBoundingClientRect().top;
+
+        if (distance < 0) {
+          progress = verticalLineHeight;
+          img.style.top = `${progress}px`;
+        } else {
+          progress -= speed;
+          img.style.top = `${progress}px`;
+        }
+        requestAnimationFrame(animateImage);
+      };
+      animateImage();
+    });
   });
 };
-
-//runSvgAnimate();
