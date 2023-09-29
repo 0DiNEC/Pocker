@@ -45,6 +45,7 @@ const reInitMovementAnimation = () => {
 };
 
 window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
   reInitMovementAnimation();
   if (window.innerWidth <= horizontalMode) banner.style.setProperty('transform', 'rotateZ(90deg)');
 });
