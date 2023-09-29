@@ -538,6 +538,12 @@ video {
   width: 100%;
 }
 
+@media (min-width: 641px) {
+  .container {
+    max-width: 641px;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -547,12 +553,6 @@ video {
 @media (min-width: 1081px) {
   .container {
     max-width: 1081px;
-  }
-}
-
-@media (min-width: 1281px) {
-  .container {
-    max-width: 1281px;
   }
 }
 
@@ -578,6 +578,15 @@ video {
   padding-right: 2.75rem;
 }
 
+@media (max-width: 640px) {
+  .header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
 @media (max-width: 1080px) {
   .header {
     margin-left: 10px;
@@ -585,7 +594,7 @@ video {
   }
 }
 
-@media (max-width: 1280px) {
+@media (min-width: 641px) and (max-width: 1280) {
   .header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -605,6 +614,12 @@ video {
   margin-right: 3.5rem;
   display: none;
   justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .right-menu {
+    margin-right: 2.6rem;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -630,6 +645,16 @@ video {
   transition-duration: 500ms;
 }
 
+@media (max-width: 640px) {
+  .burger-menu {
+    top: 26.3%;
+    right: 1rem;
+    height: 1.4rem;
+    width: 1.4rem;
+    justify-content: space-evenly;
+  }
+}
+
 .burger-line {
   height: 0.25rem;
   width: 2rem;
@@ -642,6 +667,13 @@ video {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+@media (max-width: 640px) {
+  .burger-line {
+    height: 3px;
+    width: 1.2rem;
+  }
 }
 
 .top-line.opened {
@@ -759,6 +791,13 @@ video {
   padding: 14px;
 }
 
+@media (max-width: 640px) {
+  .btn-link,
+  .btn-link._active {
+    padding: 0.5rem;
+  }
+}
+
 .btn-link {
   border-width: 2px;
   --tw-border-opacity: 1;
@@ -830,7 +869,7 @@ video {
     }
   }
 
-  @media (min-width: 1281px) and (max-width: 1840px) {
+  @media (min-width: 1081px) and (max-width: 1840px) {
     .banner {
       right: 3rem;
     }
@@ -1236,6 +1275,12 @@ video {
 
 body.no-scroll {
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .sm\:pt-\[10px\] {
+    padding-top: 10px;
+  }
 }
 
 @media (max-width: 1080px) {

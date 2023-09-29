@@ -24,10 +24,11 @@ module.exports = {
       },
       screens: {
         sm: { max: '640px' },
+        'sm-to-xl': { min: '641px', max: '1280' },
         lg: { max: '1080px' },
         'xl-mm': { min: '1081px', max: '1280px' },
         xl: { max: '1280px' },
-        '2xl-mm': { min: '1281px', max: '1840px' },
+        'xl-mm-2xl': { min: '1081px', max: '1840px' },
         '2xl': { max: '1840px' },
         '3xl': { min: '1840px' },
       },
