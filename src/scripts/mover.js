@@ -2,7 +2,7 @@ const banner = document.querySelector('.banner');
 const verticalLines = document.querySelectorAll('.vertical-line');
 const marginY = 24;
 const maxDistance = 350;
-const horizontalMode = 720;
+const horizontalMode = 1080;
 
 const initVerticalLine = () => {
   verticalLines.forEach((verticalLine) => {

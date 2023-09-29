@@ -167,11 +167,11 @@
   }
 
   .xl-closed-nav {
-    @apply invisible fixed top-0 right-0 h-screen w-screen translate-x-full transition-transform duration-500;
+    @apply flex-col invisible fixed top-[95px] right-0 h-screen w-screen translate-x-full transition-all duration-500;
   }
 
   .xl-right-nav {
-    @apply flex-col top-[95px] items-center translate-x-0 visible bg-main-navy-blue z-[5];
+    @apply pb-[100px] items-center translate-x-0 visible bg-main-navy-blue z-[5] overflow-y-auto;
   }
 
   .lang-img {
@@ -184,7 +184,7 @@
   }
 
   .xl-menu__link-item {
-    @apply w-full py-[13px] px-5 border-2 border-main-blue rounded-[28px];
+    @apply w-full py-[13px] px-5 border-2 border-main-blue rounded-[28px] hover:text-white hover:bg-main-blue transition-colors;
   }
 }
 
