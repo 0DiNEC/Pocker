@@ -65,16 +65,16 @@
 /* main */
 @layer components {
   .main {
-    @apply relative flex mx-[140px] xl-mm:mx-20 lg:mx-[10px] overflow-hidden 3xl:items-center 3xl:justify-between 3xl:max-h-[960px] h-full 2xl:flex-wrap lg:flex-col lg:items-center lg:gap-80;
+    @apply relative flex mx-[140px] xl-mm:mx-20 lg:mx-[10px] overflow-hidden 3xl:items-center 3xl:justify-between 3xl:max-h-[960px] h-full sm-to-2xl:flex-wrap lg:flex-col lg:items-center lg:gap-80;
   }
 
   /* Banner */
   .banner {
-    @apply 3xl:relative 2xl:absolute-banner grid grid-cols-3 gap-4 3xl:left-8 mb-auto max-w-[333px]  w-full overflow-hidden z-[-5];
+    @apply 3xl:relative 2xl:absolute-banner grid grid-cols-3 sm:grid-cols-sm-48 gap-4 sm:gap-2 3xl:left-8 sm:right-80 mb-auto max-w-[333px]  w-full overflow-hidden z-[-5];
   }
 
   .vertical-line {
-    @apply relative flex flex-col-reverse max-w-[101px] min-w-[64px] w-full h-full translate-y-36;
+    @apply relative flex flex-col-reverse max-w-[101px] min-w-[64px] sm:max-w-[48px] sm:min-w-0 w-full h-full translate-y-36;
   }
 
   .vertical-line .svg-img {
@@ -114,7 +114,7 @@
 /* footer */
 @layer components {
   .footer {
-    @apply relative flex mt-16 justify-between items-end gap-8 px-[140px] pt-[2.1rem] pb-6 border-t-4 border-l-4 border-r-4 border-main-blue rounded-t-rounded-3xl xl:flex-col xl-mm:items-center lg:items-start;
+    @apply relative flex mt-16 justify-between items-end gap-8 px-[140px] pt-[2.1rem] pb-6 border-t-4 border-l-4 border-r-4 border-main-blue rounded-t-rounded-3xl xl:flex-col xl-mm:items-center sm-to-lg:items-start sm:items-center;
   }
 
   .pages {
@@ -156,7 +156,7 @@
   }
 
   .absolute-banner {
-    @apply absolute xl-mm-2xl:right-12 lg:left-[] max-h-[1000px];
+    @apply absolute xl-mm-2xl:right-12 lg:left-[] h-[1000px] sm:h-[988px];
   }
 
   .bg-vector {

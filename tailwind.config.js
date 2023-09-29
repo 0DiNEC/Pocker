@@ -24,7 +24,9 @@ module.exports = {
       },
       screens: {
         sm: { max: '640px' },
-        'sm-to-xl': { min: '641px', max: '1280' },
+        'sm-to-lg': { min: '641px', max: '1080px' },
+        'sm-to-xl': { min: '641px', max: '1280px' },
+        'sm-to-2xl': { min: '641px', max: '1840px' },
         lg: { max: '1080px' },
         'xl-mm': { min: '1081px', max: '1280px' },
         xl: { max: '1280px' },
@@ -39,6 +41,9 @@ module.exports = {
       },
       transformOrigin: {
         custom: '3px',
+      },
+      gridTemplateColumns: {
+        'sm-48': 'repeat( auto-fit, minmax(0, 48px) )',
       },
     },
   },

@@ -2,7 +2,8 @@ const banner = document.querySelector('.banner');
 const verticalLines = document.querySelectorAll('.vertical-line');
 const marginY = 24;
 const maxDistance = 350;
-const horizontalMode = 1080;
+const horizontalModeHeight = 1080;
+let bHorizontalMode = false;
 
 const initVerticalLine = () => {
   verticalLines.forEach((verticalLine) => {
@@ -27,6 +28,7 @@ const runSvgAnimate = () => {
       const animateImage = () => {
         if (progress < -maxDistance) {
           progress = verticalLineHeight - maxDistance;
+          progress -= bHorizontalMode ? marginY / 2 : 0;
           img.style.top = `${progress}px`;
         } else {
           progress -= speed;
@@ -47,10 +49,18 @@ const reInitMovementAnimation = () => {
 window.addEventListener('load', () => {
   window.scrollTo(0, 0);
   reInitMovementAnimation();
-  if (window.innerWidth <= horizontalMode) banner.style.setProperty('transform', 'rotateZ(90deg)');
+  if (window.innerWidth <= horizontalModeHeight) {
+    banner.style.setProperty('transform', 'rotateZ(90deg)');
+    bHorizontalMode = true;
+  } else bHorizontalMode = false;
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth <= horizontalMode) banner.style.setProperty('transform', 'rotateZ(90deg)');
-  else banner.style.setProperty('transform', 'rotateZ(0)');
+  if (window.innerWidth <= horizontalModeHeight) {
+    banner.style.setProperty('transform', 'rotateZ(90deg)');
+    bHorizontalMode = true;
+  } else {
+    banner.style.setProperty('transform', 'rotateZ(0)');
+    bHorizontalMode = false;
+  }
 });
