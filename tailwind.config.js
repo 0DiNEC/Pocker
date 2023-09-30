@@ -40,6 +40,7 @@ module.exports = {
         'move-normal-reverse': 'moveReverse 10s linear infinite',
       },
       transformOrigin: {
+        small: '0.5px',
         custom: '3px',
       },
       gridTemplateColumns: {

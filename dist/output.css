@@ -673,6 +673,7 @@ video {
   .burger-line {
     height: 3px;
     width: 1.2rem;
+    transform-origin: 0.5px;
   }
 }
 
@@ -813,12 +814,23 @@ video {
   overflow: hidden;
 }
 
+@media (max-width: 640px) {
+  .main {
+    gap: 12rem;
+  }
+}
+
 @media (max-width: 1080px) {
   .main {
     margin-left: 10px;
     margin-right: 10px;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1080px) {
+  .main {
     gap: 20rem;
   }
 }
@@ -939,10 +951,37 @@ video {
   padding-right: 2.5rem;
 }
 
+.blog__area::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.12);
+  content: var(--tw-content);
+  filter: blur(10px);
+}
+
+@media (max-width: 640px) {
+  .blog__area {
+    max-height: 418px;
+    border-radius: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 1rem;
+  }
+}
+
 @media (max-width: 1840px) {
   .blog__area {
-    max-height: 500px;
     max-width: 490px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1840px) {
+  .blog__area {
+    max-height: 500px;
   }
 }
 
@@ -962,6 +1001,12 @@ video {
   overflow: hidden;
 }
 
+@media (max-width: 640px) {
+  .area__content {
+    gap: 10px;
+  }
+}
+
 .article {
   display: flex;
   flex-direction: column;
@@ -976,11 +1021,28 @@ video {
   padding-right: 4rem;
 }
 
+@media (max-width: 640px) {
+  .article {
+    border-radius: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
 .article__info {
   font-weight: 400;
 }
 
-@media (max-width: 1840px) {
+@media (max-width: 640px) {
+  .article__info {
+    font-size: 16px;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1840px) {
   .article__info {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -1002,6 +1064,12 @@ video {
   color: rgba(255, 255, 255, 0.60);
 }
 
+@media (max-width: 640px) {
+  .article__date {
+    margin-top: 6px;
+  }
+}
+
 .scrollbar {
   position: absolute;
   top: 15%;
@@ -1012,6 +1080,14 @@ video {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+@media (max-width: 640px) {
+  .scrollbar {
+    top: 11%;
+    right: 0.3rem;
+    width: 0.25rem;
+  }
+}
+
 .scrollbar-thumb {
   position: relative;
   height: 104px;
@@ -1020,6 +1096,12 @@ video {
   border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(71 139 249 / var(--tw-bg-opacity));
+}
+
+@media (max-width: 640px) {
+  .scrollbar-thumb {
+    height: 77px;
+  }
 }
 
 .footer {
@@ -1044,19 +1126,27 @@ video {
 
 @media (max-width: 640px) {
   .footer {
-    align-items: center;
+    margin-top: 7.7rem;
+    gap: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    padding: 1.25rem;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .footer {
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 1280px) {
   .footer {
     flex-direction: column;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1080px) {
-  .footer {
-    align-items: flex-start;
   }
 }
 
@@ -1102,6 +1192,15 @@ video {
   color: rgb(71 139 249 / var(--tw-text-opacity));
 }
 
+@media (max-width: 640px) {
+  .pages__links .link__item {
+    width: -moz-max-content;
+    width: max-content;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
 .btns-social {
   display: flex;
   gap: 0.5rem;
@@ -1122,6 +1221,13 @@ video {
 .btn-social__link:hover {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (max-width: 640px) {
+  .btn-social__link {
+    height: 27px;
+    width: 27px;
+  }
 }
 
 .link__img {
@@ -1169,6 +1275,11 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 
 .flex-grow {
@@ -1305,6 +1416,10 @@ body.no-scroll {
 }
 
 @media (max-width: 640px) {
+  .sm\:mb-\[1\.1rem\] {
+    margin-bottom: 1.1rem;
+  }
+
   .sm\:mt-\[0\.65rem\] {
     margin-top: 0.65rem;
   }
@@ -1346,6 +1461,11 @@ body.no-scroll {
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .sm\:text-xl {

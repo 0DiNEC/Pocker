@@ -17,7 +17,7 @@
   }
 
   .burger-line {
-    @apply w-8 sm:w-[1.2rem] h-1 sm:h-[3px] rounded-xl transform origin-custom transition-all duration-300 bg-white rotate-0;
+    @apply w-8 sm:w-[1.2rem] h-1 sm:h-[3px] rounded-xl transform origin-custom sm:origin-small transition-all duration-300 bg-white rotate-0;
   }
 
   .top-line.opened {
@@ -65,7 +65,7 @@
 /* main */
 @layer components {
   .main {
-    @apply relative flex mx-[140px] xl-mm:mx-20 lg:mx-[10px] overflow-hidden 3xl:items-center 3xl:justify-between 3xl:max-h-[960px] h-full sm-to-2xl:flex-wrap lg:flex-col lg:items-center lg:gap-80;
+    @apply relative flex mx-[140px] xl-mm:mx-20 lg:mx-[10px] overflow-hidden 3xl:items-center 3xl:justify-between 3xl:max-h-[960px] h-full sm-to-2xl:flex-wrap lg:flex-col lg:items-center sm-to-lg:gap-80 sm:gap-48;
   }
 
   /* Banner */
@@ -83,38 +83,38 @@
 
   /* blog */
   .blog__area {
-    @apply relative overflow-y-scroll py-6 pl-6 pr-10 border-[3px] border-additional-purple rounded-[100px] 3xl:max-w-[530px] 2xl:max-w-[490px] 3xl:max-h-[595px] 2xl:max-h-[500px] w-full h-full;
+    @apply relative overflow-y-scroll py-6 sm:py-[7px] pl-6 sm:pl-[10px] pr-10 sm:pr-4  border-[3px] border-additional-purple rounded-[100px] sm:rounded-[50px] 3xl:max-w-[530px] 2xl:max-w-[490px] 3xl:max-h-[595px] sm-to-2xl:max-h-[500px] sm:max-h-[418px] w-full h-full before:blog__area-before;
   }
 
   .area__content {
-    @apply flex flex-col overflow-hidden gap-4 w-full h-full;
+    @apply flex flex-col overflow-hidden gap-4 sm:gap-[10px] w-full h-full;
   }
 
   .article {
-    @apply flex bg-main-deep-blue flex-col py-4 px-16 rounded-[196px] items-start self-stretch;
+    @apply flex bg-main-deep-blue flex-col py-4 sm:py-[15px] px-16 sm:px-[32px] rounded-[196px] sm:rounded-[40px] items-start self-stretch;
   }
 
   .article__info {
-    @apply 3xl:text-2xl 2xl:text-xl font-normal;
+    @apply 3xl:text-2xl sm-to-2xl:text-xl sm:text-[16px] sm:leading-5 font-normal;
   }
 
   .article__date {
-    @apply text-transparent-white-60 text-sm font-[450] leading-4 mt-[14px];
+    @apply text-transparent-white-60 text-sm font-[450] leading-4 mt-[14px] sm:mt-[6px];
   }
 
   .scrollbar {
-    @apply absolute top-[15%] right-4 h-[70%] w-2 bg-transparent-white-12 rounded-[10px];
+    @apply absolute top-[15%] sm:top-[11%] right-4 sm:right-[0.3rem] h-[70%] w-2 sm:w-1 bg-transparent-white-12 rounded-[10px];
   }
 
   .scrollbar-thumb {
-    @apply relative w-full h-[104px] bg-main-blue cursor-pointer rounded-[10px];
+    @apply relative w-full h-[104px] sm:h-[77px] bg-main-blue cursor-pointer rounded-[10px];
   }
 }
 
 /* footer */
 @layer components {
   .footer {
-    @apply relative flex mt-16 justify-between items-end gap-8 px-[140px] pt-[2.1rem] pb-6 border-t-4 border-l-4 border-r-4 border-main-blue rounded-t-rounded-3xl xl:flex-col xl-mm:items-center sm-to-lg:items-start sm:items-center;
+    @apply relative flex mt-16 sm:mt-[7.7rem] justify-between items-end xl-mm:items-center lg:items-start gap-8 sm:gap-[20px] px-[140px] pt-[2.1rem] pb-6 sm:p-5 sm:pt-[15px] border-t-4 sm:border-t-2 border-l-4 sm:border-l-2 border-r-4 sm:border-r-2 border-main-blue rounded-t-rounded-3xl sm:rounded-t-[50px] xl:flex-col;
   }
 
   .pages {
@@ -126,7 +126,7 @@
   }
 
   .pages__links .link__item {
-    @apply font-lexend text-base font-normal leading-5 text-center hover:text-main-blue transition-colors;
+    @apply font-lexend text-base sm:text-sm font-normal leading-5 text-center hover:text-main-blue transition-colors sm:w-max;
   }
 
   .btns-social {
@@ -134,7 +134,7 @@
   }
 
   .btn-social__link {
-    @apply bg-vector w-8 h-8 hover:invert transition-all duration-300;
+    @apply bg-vector w-8 sm:w-[27px] h-8 sm:h-[27px] hover:invert transition-all duration-300;
   }
 
   .link__img {
@@ -185,6 +185,16 @@
 
   .xl-menu__link-item {
     @apply w-full py-[13px] px-5 border-2 border-main-blue rounded-[28px] hover:text-white hover:bg-main-blue transition-colors;
+  }
+
+  .blog__area-before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @apply bg-transparent-white-12;
+    filter: blur(10px);
   }
 }
 
