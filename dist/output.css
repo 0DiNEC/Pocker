@@ -819,33 +819,6 @@ video {
   overflow: hidden;
 }
 
-.main::before {
-  content: var(--tw-content);
-  position: fixed;
-  width: 113px;
-  height: 1302px;
-  top: -140px;
-  left: 160px;
-  transform: rotate(-54.31deg);
-  opacity: 0.55;
-  border-radius: 100%;
-  background: linear-gradient(#478bf9 40%, #478bf9 100%);
-  filter: blur(113px);
-}
-
-.main::after {
-  content: var(--tw-content);
-  position: fixed;
-  width: 350px;
-  height: 350px;
-  bottom: 140px;
-  right: 0;
-  opacity: 0.7;
-  border-radius: 100%;
-  background: linear-gradient(#478bf9 100%, #9dadf2 100%);
-  filter: blur(237px);
-}
-
 @media (max-width: 640px) {
   .main {
     gap: 12rem;
@@ -1452,6 +1425,33 @@ video {
 
 body.no-scroll {
   overflow: hidden;
+}
+
+body::before {
+  content: var(--tw-content);
+  position: absolute;
+  width: 113px;
+  height: 1302px;
+  top: -140px;
+  left: 160px;
+  transform: rotate(-54.31deg);
+  opacity: 0.55;
+  border-radius: 100%;
+  background: linear-gradient(#478bf9 40%, #478bf9 100%);
+  filter: blur(113px);
+}
+
+body::after {
+  content: var(--tw-content);
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  bottom: 140px;
+  right: 0;
+  opacity: 0.7;
+  border-radius: 100%;
+  background: linear-gradient(#478bf9 100%, #9dadf2 100%);
+  filter: blur(237px);
 }
 
 @media (max-width: 640px) {

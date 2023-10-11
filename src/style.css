@@ -69,7 +69,7 @@
 /* main */
 @layer components {
   .main {
-    @apply relative flex mx-[140px] xl-mm:mx-20 lg:mx-[10px] overflow-hidden 3xl:items-center 3xl:justify-between 3xl:max-h-[960px] h-full sm-to-2xl:flex-wrap lg:flex-col lg:items-center sm-to-lg:gap-80 sm:gap-48 before:dot-light after:dot-light_rounded;
+    @apply relative flex mx-[140px] xl-mm:mx-20 lg:mx-[10px] overflow-hidden 3xl:items-center 3xl:justify-between 3xl:max-h-[960px] h-full sm-to-2xl:flex-wrap lg:flex-col lg:items-center sm-to-lg:gap-80 sm:gap-48;
   }
 
   /* Banner */
@@ -202,7 +202,7 @@
   }
 
   .dot-light {
-    position: fixed;
+    position: absolute;
     width: 113px;
     height: 1302px;
     top: -140px;
@@ -215,7 +215,7 @@
   }
 
   .dot-light_rounded {
-    position: fixed;
+    position: absolute;
     width: 350px;
     height: 350px;
     bottom: 140px;
@@ -234,4 +234,8 @@
 
 body.no-scroll {
   overflow: hidden;
+}
+
+body {
+  @apply before:dot-light after:dot-light_rounded
 }
