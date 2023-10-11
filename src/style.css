@@ -33,7 +33,7 @@
   }
 
   .right-nav {
-    @apply flex justify-between xl:xl-closed-nav;
+    @apply flex justify-between top-[95px] xl:xl-closed-nav;
   }
 
   .right-nav.opened {
@@ -70,7 +70,7 @@
 
   /* Banner */
   .banner {
-    @apply 3xl:relative 2xl:absolute-banner grid grid-cols-3 sm:grid-cols-sm-48 gap-4 sm:gap-2 3xl:left-8 sm:right-80 mb-auto max-w-[333px]  w-full overflow-hidden z-[-5];
+    @apply 3xl:relative 2xl:absolute-banner grid grid-cols-3 sm:grid-cols-sm-48 gap-4 sm:gap-2 3xl:left-20 sm:right-80 mb-auto max-w-[333px]  w-full overflow-hidden z-[-5];
   }
 
   .vertical-line {
@@ -167,7 +167,7 @@
   }
 
   .xl-closed-nav {
-    @apply flex-col invisible fixed top-[95px] right-0 h-screen w-screen translate-x-full;
+    @apply flex-col invisible fixed right-0 h-screen w-screen translate-x-full;
   }
 
   .xl-right-nav {
@@ -190,7 +190,7 @@
   .blog__area-before {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 170%;
     top: 0;
     left: 0;
     @apply bg-transparent-white-12;

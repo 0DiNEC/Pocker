@@ -694,6 +694,7 @@ video {
 }
 
 .right-nav {
+  top: 95px;
   display: flex;
   justify-content: space-between;
 }
@@ -702,7 +703,6 @@ video {
   .right-nav {
     visibility: hidden;
     position: fixed;
-    top: 95px;
     right: 0px;
     height: 100vh;
     width: 100vw;
@@ -905,7 +905,7 @@ video {
 @media (min-width: 1840px) {
   .banner {
     position: relative;
-    left: 2rem;
+    left: 5rem;
   }
 }
 
@@ -954,7 +954,7 @@ video {
 .blog__area::before {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 170%;
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.12);
@@ -1256,10 +1256,6 @@ video {
   margin-bottom: 1.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1539,6 +1535,10 @@ body.no-scroll {
 }
 
 @media (min-width: 1840px) {
+  .\33xl\:ml-auto {
+    margin-left: auto;
+  }
+
   .\33xl\:text-8xl {
     font-size: 6rem;
     line-height: 1;

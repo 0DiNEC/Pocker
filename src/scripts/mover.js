@@ -3,7 +3,8 @@ const verticalLines = document.querySelectorAll('.vertical-line');
 const marginY = 24;
 const maxDistance = 350;
 const horizontalModeHeight = 1080;
-let bHorizontalMode = false;
+const smallHorizontalMode = 640;
+let bSmallHorizontalMode = false;
 
 const initVerticalLine = () => {
   verticalLines.forEach((verticalLine) => {
@@ -22,13 +23,13 @@ const runSvgAnimate = () => {
   verticalLines.forEach((verticalLine, index) => {
     const images = verticalLine.querySelectorAll('.svg-img');
     const verticalLineHeight = verticalLine.clientHeight;
-    images.forEach((img, i) => {
+    images.forEach((img) => {
       let progress = img.getBoundingClientRect().top;
       const speed = index === 1 ? 2 : 4;
       const animateImage = () => {
         if (progress < -maxDistance) {
           progress = verticalLineHeight - maxDistance;
-          progress -= bHorizontalMode ? marginY / 2 : 0;
+          progress -= bSmallHorizontalMode ? marginY / 2 : 0;
           img.style.top = `${progress}px`;
         } else {
           progress -= speed;
@@ -51,16 +52,27 @@ window.addEventListener('load', () => {
   reInitMovementAnimation();
   if (window.innerWidth <= horizontalModeHeight) {
     banner.style.setProperty('transform', 'rotateZ(90deg)');
-    bHorizontalMode = true;
-  } else bHorizontalMode = false;
+  }
+  if (window.innerWidth <= smallHorizontalMode) bSmallHorizontalMode = true;
 });
 
 window.addEventListener('resize', () => {
   if (window.innerWidth <= horizontalModeHeight) {
     banner.style.setProperty('transform', 'rotateZ(90deg)');
-    bHorizontalMode = true;
   } else {
     banner.style.setProperty('transform', 'rotateZ(0)');
-    bHorizontalMode = false;
+  }
+
+  if (window.innerWidth <= smallHorizontalMode) {
+    if (!bSmallHorizontalMode) {
+      window.location.reload();
+      bSmallHorizontalMode = true;
+    }
+  } 
+  if (window.innerWidth > smallHorizontalMode) {
+    if (bSmallHorizontalMode) {
+      window.location.reload();
+      bSmallHorizontalMode = true;
+    }
   }
 });
